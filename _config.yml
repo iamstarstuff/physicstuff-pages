@@ -1,0 +1,22 @@
+# GitHub Pages Configuration
+title: PhysicStuff
+description: Physics explained through interactive visualizations and clear analysis
+author: Pratik Barve
+url: "https://iamstarstuff.github.io"
+baseurl: "/physicstuff_githubpages"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Jekyll plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
