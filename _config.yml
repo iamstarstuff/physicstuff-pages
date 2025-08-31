@@ -3,7 +3,7 @@ title: PhysicStuff
 description: Physics explained through interactive visualizations and clear analysis
 author: Pratik Barve
 url: "https://iamstarstuff.github.io"
-baseurl: "/physicstuff_githubpages"
+baseurl: "/physicstuff-pages"
 
 # Build settings
 markdown: kramdown

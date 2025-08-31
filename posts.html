@@ -6,173 +6,85 @@
     <title>All Posts - PhysicStuff</title>
     
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/physicstuff-pages/assets/css/style.css">
+    
+    <!-- Plotly.js for interactive graphs -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="/assets/Logo.png" alt="PhysicStuff" height="30" class="me-2">
-                PhysicStuff
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/posts.html">Posts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about.html">About</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <div class="container my-5">
-            <h1 class="text-center mb-5">All Posts</h1>
-            <div class="row">
+    <!-- Header -->
+    <header class="header-area">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="/physicstuff-pages/index.html">
+                    <img src="/physicstuff-pages/assets/Logo.png" alt="PhysicStuff Logo" class="brand-logo">
+                </a>
                 
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 post-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Lissajous Figures</h5>
-                        <p class="card-text">Lissajous Figures: Mathematical Beauty in Harmonic Motion Three-dimensional Lissajous figures represent a fascinating extension of the classical two-....</p>
-                        <div class="post-meta mb-3">
-                            <small class="text-muted">
-                                <i class="fas fa-calendar"></i> 2025-08-18 
-                                <i class="fas fa-folder ms-2"></i> Physics
-                            </small>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/posts/lissajous-figures.html" class="btn btn-primary">Read More</a>
-                    </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/physicstuff-pages/index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/physicstuff-pages/posts.html">Posts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/physicstuff-pages/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                                <i class="fas fa-moon" id="themeIcon"></i>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 post-card">
-                    <div class="card-body">
-                        <h5 class="card-title">What Is Leidenfrost Effect</h5>
-                        <p class="card-text">Introduction: The Dancing Droplets Phenomenon When water droplets are placed on an extremely hot surface, an extraordinary phenomenon occurs that see....</p>
-                        <div class="post-meta mb-3">
-                            <small class="text-muted">
-                                <i class="fas fa-calendar"></i> 2025-08-18 
-                                <i class="fas fa-folder ms-2"></i> Physics
-                            </small>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/posts/what-is-leidenfrost-effect.html" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 post-card">
-                    <div class="card-body">
-                        <h5 class="card-title">How Do They Determine Stellar Distances?</h5>
-                        <p class="card-text">Just looking at stars in the night sky seems as if every star is equally far away. Feels like we are bound by some spherical ball with stars on the sp...</p>
-                        <div class="post-meta mb-3">
-                            <small class="text-muted">
-                                <i class="fas fa-calendar"></i> 2025-08-18 
-                                <i class="fas fa-folder ms-2"></i> Astronomy
-                            </small>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/posts/how-do-they-determine-stellar-distances.html" class="btn btn-primary">Read More</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <header class="page-header">
+                        <h1>All Posts</h1>
+                        <p>Explore all physics topics and interactive visualizations</p>
+                    </header>
+                    
+                    <div class="posts-grid">
+                        
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 post-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Halvorsen Attractor</h5>
-                        <p class="card-text">The Halvorsen Attractor: Exploring Chaotic Beauty in Three Dimensions The Halvorsen attractor stands as one of the most visually striking examples of....</p>
-                        <div class="post-meta mb-3">
-                            <small class="text-muted">
-                                <i class="fas fa-calendar"></i> 2025-08-18 
-                                <i class="fas fa-folder ms-2"></i> Data Science
-                            </small>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/posts/halvorsen-attractor.html" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 post-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Maxwell Velocity Distribution</h5>
-                        <p class="card-text">The Maxwell-Boltzmann velocity distribution stands as one of the most elegant and profound results in statistical mechanics, describing how molecular....</p>
-                        <div class="post-meta mb-3">
-                            <small class="text-muted">
-                                <i class="fas fa-calendar"></i> 2025-08-18 
-                                <i class="fas fa-folder ms-2"></i> Physics
-                            </small>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/posts/maxwell-velocity-distribution.html" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card h-100 post-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Cathala Attractor: Chaos And Beauty</h5>
-                        <p class="card-text">The Cathala Attractor: Chaos and Beauty in Discrete Dynamical Systems The Cathala Attractor represents a fascinating example of chaotic behavior emer....</p>
-                        <div class="post-meta mb-3">
-                            <small class="text-muted">
-                                <i class="fas fa-calendar"></i> 2025-08-18 
-                                <i class="fas fa-folder ms-2"></i> Physics
-                            </small>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="/posts/cathala-attractor-chaos-and-beauty.html" class="btn btn-primary">Read More</a>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-dark text-light py-4 mt-5">
+    <!-- Footer -->
+    <footer class="footer-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h5>PhysicStuff</h5>
-                    <p>Making physics accessible through interactive visualizations and clear explanations.</p>
+                <div class="col-12 text-center">
+                    <p>&copy; 2025 PhysicStuff | Created with Flask</p>
                 </div>
-                <div class="col-md-6">
-                    <h5>Connect</h5>
-                    <a href="#" class="text-light me-3"><i class="fab fa-github"></i></a>
-                    <a href="#" class="text-light me-3"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="text-light"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center">
-                <p>&copy; 2025 Pratik Barve. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="/physicstuff-pages/assets/js/main.js"></script>
 </body>
 </html>
